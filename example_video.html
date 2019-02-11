@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script src="./face-api.js" type="text/javascript"></script>
+        <script src="./drawing.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/0.15.0/tf.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <video id="inputVideo" autoplay muted></video>
+            <canvas id="overlay" ></canvas>
+        </div>
+
+        <div id="console"></div>
+        <script>
+
+            function getFaceDetectorOptions() {
+                return new faceapi.TinyFaceDetectorOptions({ })
+            }
+
+            function onPlay(videoEl) {
+                if (videoEl.paused || videoEl.ended) {
+                    return setTimeout(() => onPlay(videoEl));
+                }
+
+                const options = getFaceDetectorOptions();
+                faceapi.detectSingleFace(videoEl, options)
+                    .withFaceExpressions()
+                    .then(result => {
+                        if (result) {
+                            drawExpressions(videoEl, $('#overlay').get(0), [result], 0.5, true);
+                        }
+                        setTimeout(() => onPlay(videoEl));
+                    });
+            }
+
+            function init() {
+                const videoEl = $('#inputVideo');
+                videoEl.on('play', function () {
+                    $('#console').text('ONPLAY');
+                    onPlay(this);
+                });
+
+                navigator.mediaDevices.getUserMedia({ video: {} })
+                    .then(stream => {
+                        $('#console').text('START');
+                        videoEl.get(0).srcObject = stream;
+                    });
+            }
+
+            $(document).ready(() => {
+                $('#console').text('READY');
+                faceapi.loadTinyFaceDetectorModel('./weights')
+                    .then(() => faceapi.loadFaceExpressionModel('./weights'))
+                    .then(() => {
+                        $('#console').text('MODEL LOADED');
+                        init();
+                    });
+            });
+        </script>
+    </body>
+</html>

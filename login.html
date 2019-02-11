@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="./imgs/logo.jpg" width="50" height="30" class="d-inline-block align-top" alt="">
+        May Project
+      </a>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-around">
+					<div class="col-4">
+						<a href="#" class="link active" id="login-form-link">Login</a>
+					</div>
+					<div class="col-4">
+						<a href="#" class="link" id="register-form-link">Register</a>
+					</div>
+			</div>
+      <div class="row justify-content-around">
+        <div class="col-6">
+          <form id="login-form" role="form" action="example_video.html" style="display: block;">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+          <form id="register-form" role="form" action="example_video.html" style="display: none;">
+            <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword1">Password</label>
+              <input type="password" class="form-control" id="inputPassword1" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword1">Repeat password</label>
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="inlineFormCustomSelect">Gender</label>
+              <select class="custom-select" id="inlineFormCustomSelect">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="ohter">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword1">Age</label>
+              <input type="number" class="form-control" id="inputAge" placeholder="Age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
