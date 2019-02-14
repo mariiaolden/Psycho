@@ -5,15 +5,15 @@
   }
 
   if (empty($_POST['email'])) {
-    $err[] = 'Поле Email не может быть пустым!';
+    $err[] = 'This field can't be empty!';
   }
 
   if (empty($_POST['password1'])) {
-    $err[] = 'Поле Password не может быть пустым!';
+    $err[] = 'This field can't be empty!';
   }
 
   if($_POST['password1'] != $_POST['password2']) {
-    $err[] = 'Пароли не совподают';
+    $err[] = 'Wrong password';
   }
 
   if (count($err) > 0) {

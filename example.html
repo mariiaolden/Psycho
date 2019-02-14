@@ -31,7 +31,7 @@
                     // create an HTMLImageElement from a Blob
                     faceapi.bufferToImage(imgFile).then((img) => {
                         $('#myImg')[0].src = img.src;
-    
+
                         $('#console').text('DETECTION');
                         faceapi.detectAllFaces($('#myImg')[0], getFaceDetectorOptions())
                             .withFaceExpressions()
@@ -40,7 +40,7 @@
                                 console.log(r);
                                 drawExpressions($('#myImg').get(0), $('#overlay').get(0), r, 0.5, true)
                             });
-    
+
                     });
                 });
             }
