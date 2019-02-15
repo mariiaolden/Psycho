@@ -23,6 +23,7 @@
   border-radius: 5px;
   padding: 16px;
   margin: 16px auto;
+  position: relative;
 }
 
 /* Clear floats after containers */
