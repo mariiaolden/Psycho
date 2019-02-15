@@ -3,7 +3,10 @@
   top: 0;
   left: 0;
 }
-
+#myImg {
+  height: 100px;
+  width: 100px;
+}
 .container {
   position: relative;
   margin-top: 20px;
@@ -19,7 +22,6 @@ body {
   color: white;
 }
 .navbar {
-  overflow: hidden;
   background-color: #333;
 }
 .navbar a {
@@ -60,4 +62,7 @@ body {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.dropdown-menu {
+   background-color: #333;
 }
