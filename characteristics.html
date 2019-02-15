@@ -6,27 +6,19 @@
     <link rel="stylesheet" href="styles.css">
     <title></title>
   </head>
-  <body>
-    <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Collapsed content</h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
+  <body>  
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="dropdown">
+      <button class="navbar-toggler" type="dropbtn" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="dropdown-content dropdown-menu" area-labelledby="dropdown">
+        <a href="login.html">Login</a>
+        <a href="menu.html">Menu</a>
+        <a href="results.html">Results</a>
       </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="dropdown">
-    <button class="navbar-toggler" type="dropbtn" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-    <div class="dropdown-content dropdown-menu" area-labelledby="dropdown">
-      <a href="login.html">Login</a>
-      <a href="menu.html">Menu</a>
-      <a href="results.html">Results</a>
-    </div>
-    </div>
-  </nav>
-</div>
+      </div>
+    </nav>
 <h2>Characteristics:</h2><br>
 <table class="table">
   <thead>
